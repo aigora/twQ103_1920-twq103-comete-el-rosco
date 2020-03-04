@@ -1,10 +1,12 @@
-# Título del trabajo
+# Cómete el Rosco
 
-Descripción breve del proyecto a realizar (2-3 frases).
+Juego de 25 preguntas
 
 ## Integrantes del equipo
 
-Nombres, apellidos, y usuario GitHub de los integrantes del equipo.
+Alejandra Martínez (alejandra-martinez-nunez)
+Ana Medrano (cherryoomb)
+Ricardo Suero (
 
 ## Objetivos del trabajo
 
