@@ -1,6 +1,6 @@
 # Cómete el Rosco
 
-Juego de 25 preguntas,cada una correspondiente con una etra del abecedario, el juego finalizará cuando se contesten todas las preguntas correcta o incorrectamente.
+Este juego consiste en 25 preguntas cada una correspondientes a una letra del abecedario, en el que consigues poner en juego tu cultura general y memoria.
 
 ## Integrantes del equipo
 
@@ -10,4 +10,4 @@ Ricardo Suero (RicardoSuero)
 
 ## Objetivos del trabajo
 
-Entretener durante la duración del juego, y adquirir conocimientos nuevos de cultura general.
+Con este juego intentamos que el jugador pase un buen rato a la vez que desarrolla su velocidad mental.
