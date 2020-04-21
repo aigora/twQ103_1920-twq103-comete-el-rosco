@@ -1,31 +1,38 @@
 #include <stdio.h>
 #include <string.h>
 
+
+// Cuando imprimimos los usuarios en el fichero nos aparecen '0' que no
+// corresponden con la puntuación, con lo demás no tenemos ningún problema,
+// todo solucionado.
+
 struct Tusuario {
 	char nombre[50];
 	char contrasena[50];
-	int puntuacion=0;
+	int puntuacion;
 };
 
 int main() {
 	
 	struct Tusuario vectorUsuario[150];
+	struct Tusuario inicioUsuario;
 	struct Tusuario usuarioNuevo;
 	FILE * pfichero;
 	int contador=0, opcion1, bien=0; 
-
-	pfichero = fopen("usuarios1.txt", "r");
+    int puntuacion=0, i;
+    
+pfichero = fopen("usuarios1.txt", "r");
 	
 	if (pfichero == NULL) {
 		printf("No se encuentra el fichero\n");
 		return 0;
 	}
 	
-    while(fscanf(pfichero, "%s %s %d", &vectorUsuario[contador].nombre, &vectorUsuario[contador].contrasena, &vectorUsuario[contador].puntuacion) != EOF){
-    	//printf("%s %s %d\n", vectorUsuario[contador].nombre, vectorUsuario[contador].contrasena, vectorUsuario[contador].puntuacion);
+    while(fscanf(pfichero, "%s %s %d", vectorUsuario[contador].nombre, vectorUsuario[contador].contrasena, &vectorUsuario[contador].puntuacion) != EOF){
+    	printf("%s %s %d\n", vectorUsuario[contador].nombre, vectorUsuario[contador].contrasena, vectorUsuario[contador].puntuacion);
 		contador++;
 	}
-
+fclose(pfichero);
 	
 	do{
 	
@@ -34,45 +41,50 @@ int main() {
 		switch (opcion1) {
 			case 1: 
 			printf("Usuario: \n");
-			scanf("%s", &usuarioNuevo.nombre);
+			scanf("%s", inicioUsuario.nombre);
 			printf("Contrasena: \n");
-			scanf("%s", &usuarioNuevo.contrasena);
+			scanf("%s", inicioUsuario.contrasena);
 			
-			while(fscanf(pfichero, "%s %s", &vectorUsuario[contador].nombre, &vectorUsuario[contador].contrasena) != EOF){
-			    if(strcmp(usuarioNuevo.nombre, vectorUsuario[contador].nombre) == 0 && strcmp(usuarioNuevo.contrasena, vectorUsuario[contador].contrasena) == 0){
-		        printf("Bienvenido %s\n", usuarioNuevo.nombre);
+			for(i=0; i<=contador; i++){
+			
+			    if(strcmp(inicioUsuario.nombre, vectorUsuario[i].nombre) == 0 && strcmp(inicioUsuario.contrasena, vectorUsuario[i].contrasena) == 0){
+		        printf("Bienvenido %s\n", inicioUsuario.nombre);
 		        bien = 1;
-			    } else {
+		        break;
+			    }else{
 				printf("Usuario incorrecto\n");
-				bien = 0;
-                
+				return 0;
+                }
 			}
-			fclose(pfichero);
 		       break;
 			case 2:
 				
-			pfichero = fopen("usuarios1.txt", "w");
-				
 			printf("Nuevo Usuario: \n");
-			scanf("%s", &usuarioNuevo.nombre);
-			
-			
+			scanf("%s", usuarioNuevo.nombre);
+		
 			printf("Nueva Contrasena: \n");
-			scanf("%s", &usuarioNuevo.contrasena);
+			scanf("%s", usuarioNuevo.contrasena);
 			
-			strcpy(vectorUsuario[contador].nombre, usuarioNuevo.nombre);
-			strcpy(vectorUsuario[contador].contrasena, usuarioNuevo.contrasena);
-			
-			fprintf(pfichero, "%s %s", vectorUsuario[contador].nombre, vectorUsuario[contador].contrasena);
-			fclose(pfichero);
 			bien = 1;
 				break;
 				
 			case 3:
 			return 0;	
-				
-		}}
+		}
 	}while(bien == 0);
 
+
+
+pfichero = fopen ("usuarios1.txt", "w");
+for(i=0; i<=contador; i++){
+	fprintf(pfichero, "%s %s %d\n", vectorUsuario[i].nombre, vectorUsuario[i].contrasena, vectorUsuario[i].puntuacion);
+}
+
+
+strcpy(vectorUsuario[contador].nombre, usuarioNuevo.nombre);
+strcpy(vectorUsuario[contador].contrasena, usuarioNuevo.contrasena);
+
+fprintf(pfichero, "%s %s %d\n", vectorUsuario[contador].nombre, vectorUsuario[contador].contrasena, vectorUsuario[contador].puntuacion);
+fclose(pfichero);
 	return 0;
 }
