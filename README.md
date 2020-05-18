@@ -10,4 +10,4 @@ Ricardo Suero (RicardoSuero)
 
 ## Objetivos del trabajo
 
-Este juego contiene 25 preguntas que se corresponden con una letra del abecedario a las cuales el jugador deberá responder. Si el jugador decide no responder a una pregunta podrá pasarla hasta la siguiente ronda. En el caso de que el jugador acierte una pregunta se le sumará un punto a su contador, en el caso de las preguntas erróneas no se sumará ningún punto. El jugador que adquiera más puntos se imprimirá en pantalla al final del juego. De esta forma si superas el récord de un jugador, ocuparás su puesto en la lista.
+Este juego contiene 26 preguntas que se corresponden con una letra del abecedario a las cuales el jugador deberá responder. Si el jugador decide no responder a una pregunta podrá pasarla e ir a la siguiente pregunta. En el caso de que el jugador acierte una pregunta se le sumará un punto a su contador, en el caso de las preguntas erróneas no se sumará ningún punto. El jugador que adquiera más puntos se imprimirá en pantalla al final del juego. De esta forma si superas el récord de un jugador, ocuparás su puesto en la lista.
