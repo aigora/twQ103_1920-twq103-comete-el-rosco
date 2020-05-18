@@ -1,6 +1,6 @@
 # Cómete el Rosco
 
-Este juego consiste en 25 preguntas cada una correspondientes a una letra del abecedario, en el que consigues poner en juego tu cultura general y memoria.
+Este juego consiste en 26 preguntas cada una correspondientes a una letra del abecedario, en el que consigues poner en juego tu cultura general y memoria.
 
 ## Integrantes del equipo
 
